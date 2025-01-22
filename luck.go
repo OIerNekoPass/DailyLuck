@@ -79,7 +79,7 @@ func gen_luck(lid int) (string, string, string){
 	}
 }
 
-func Gen_Pic(uid int64, bk_dir string, ft_dir string, ttf_path string, out_dir string) {
+func Gen_Pic(uid int64, bk_dir string, ft_dir string, ttf_path string, out_path string) {
 	rand.Seed(uid + get_time_seed())
 
 	pid := strconv.Itoa(rand.Intn(pic_num) + 1) + ".png";
@@ -110,7 +110,7 @@ func Gen_Pic(uid int64, bk_dir string, ft_dir string, ttf_path string, out_dir s
 	dc.SetRGB(0, 0, 0)
 	dc.DrawString("忌: " + bad, 36, float64(output.Bounds().Dy() - 108))
 
-    outFile, err := os.Create(out_dir + "/" +strconv.Itoa(int(uid))+".png")
+    outFile, err := os.Create(out_path)
     if err != nil {
         log.Fatalf("Failed to create output file: %v", err)
     }
