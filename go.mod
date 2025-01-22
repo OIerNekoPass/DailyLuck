@@ -1,4 +1,4 @@
-module luck
+module github.com/OIerNekoPass/DailyLuck
 
 go 1.23.4
 
